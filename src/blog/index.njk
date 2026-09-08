@@ -1,0 +1,27 @@
+---
+layout: base.njk
+title: Blog
+permalink: /blog/
+---
+<p class="section-label">All notes</p>
+<div class="note-list">
+  {% for post in collections.posts %}
+  <a class="note-item" href="{{ post.url }}">
+    <div class="note-item-top">
+      <span class="note-title">{{ post.data.title }}</span>
+      <span class="note-date">{{ post.data.date | readableDate }}</span>
+    </div>
+    <p class="note-excerpt">{{ post.data.excerpt }}</p>
+    {% if post.data.tags %}
+    <div class="note-tags">
+      {% for tag in post.data.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+    </div>
+    {% endif %}
+  </a>
+  {% else %}
+  <p style="color:var(--ink-soft);">
+    Nothing published yet. This will fill up with short "garden" notes as well as longer
+    posts — mostly on product management, supply chain risk, and things I'm learning.
+  </p>
+  {% endfor %}
+</div>

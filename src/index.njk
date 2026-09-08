@@ -1,0 +1,44 @@
+---
+layout: base.njk
+title: null
+---
+<section class="hero">
+  <span class="hero-eyebrow">Product · Supply Chain Risk · Learning in public</span>
+  <h1>Phil Venice</h1>
+  <p class="lede">
+    Product manager working at the intersection of supply chain risk management and
+    Pentagon-facing programs. Formerly 11 years at Boeing in third-party risk &amp; resilience.
+    This is a small home for what I'm building, learning, and thinking about.
+  </p>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="/about/">About &amp; background</a>
+    <a class="btn btn-ghost" href="/blog/">Read the notes</a>
+  </div>
+</section>
+
+<section>
+  <p class="section-label">Recent notes</p>
+  <div class="note-list">
+    {% for post in collections.posts %}
+    <a class="note-item" href="{{ post.url }}">
+      <div class="note-item-top">
+        <span class="note-title">{{ post.data.title }}</span>
+        <span class="note-date">{{ post.data.date | readableDate }}</span>
+      </div>
+      <p class="note-excerpt">{{ post.data.excerpt }}</p>
+      {% if post.data.tags %}
+      <div class="note-tags">
+        {% for tag in post.data.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+      </div>
+      {% endif %}
+    </a>
+    {% else %}
+    <a class="note-item" href="/blog/">
+      <div class="note-item-top">
+        <span class="note-title">Nothing posted yet — first notes coming soon</span>
+      </div>
+      <p class="note-excerpt">I'm setting this up before I start writing. Check back soon, or see the blog page for what's planned.</p>
+    </a>
+    {% endfor %}
+  </div>
+</section>
