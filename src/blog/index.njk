@@ -6,6 +6,16 @@ permalink: /blog/
 <p class="section-label">Writing</p>
 <h1 class="page-title">Essays, notes, and things I’m learning.</h1>
 <p class="writing-intro">Writing about what I'm reading, building, and trying to understand. Some pieces draw on my work; others follow an interest or a question.</p>
+
+{% set tags = collections.tagList %}
+{% if tags.length %}
+<div class="topic-chip-row">
+  {% for tag in tags %}
+  <a class="topic-chip" href="/topics/{{ tag | slugify }}/">{{ tag }}</a>
+  {% endfor %}
+</div>
+{% endif %}
+
 <div class="note-list">
   {% for post in collections.posts %}
   <a class="note-item" href="{{ post.url }}">

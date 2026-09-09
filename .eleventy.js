@@ -18,6 +18,25 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
+  eleventyConfig.addFilter("slugify", (str) => {
+    if (!str) return "";
+    return String(str)
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+  });
+
+  eleventyConfig.addCollection("tagList", function (collectionApi) {
+    const tagsSet = new Set();
+    collectionApi.getFilteredByGlob("src/blog/posts/*.md").forEach((item) => {
+      (item.data.tags || []).forEach((tag) => {
+        if (tag !== "meta") tagsSet.add(tag);
+      });
+    });
+    return [...tagsSet].sort();
+  });
+
   return {
     dir: {
       input: "src",

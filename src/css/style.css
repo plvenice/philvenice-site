@@ -56,6 +56,14 @@ p{margin:0 0 22px}
 .note-tags{display:flex;gap:14px;flex-wrap:wrap;margin-top:16px}
 .tag{font-size:12px;color:var(--ink-mute)}
 .tag+.tag:before{content:'/';margin-right:14px;color:#8793a5}
+.topic-chip-row{display:flex;flex-wrap:wrap;gap:10px 16px;margin:0 0 40px}
+.topic-chip{font:12px var(--font-mono);letter-spacing:.4px;color:var(--ink-mute);padding:6px 14px;border:1px solid var(--navy-border);border-radius:999px}
+.topic-chip:hover{color:var(--copper-deep);border-color:var(--copper);text-decoration:none}
+.project-item{padding:28px 0;border-top:1px solid var(--navy-border)}
+.project-item:first-child{border-top:0}
+.project-title{font:500 26px var(--font-display);color:var(--ink);margin:0 0 10px}
+.project-body{color:var(--ink-soft);max-width:66ch;margin:0 0 14px}
+.project-item.is-placeholder{opacity:.7}
 .featured-writing .note-list{margin:0}
 .featured-writing .note-item:first-child{border:0;padding-top:0}
 .featured-writing .note-title{font-size:clamp(32px,4vw,52px);line-height:1.1}
