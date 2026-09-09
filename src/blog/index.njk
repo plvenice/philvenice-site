@@ -1,11 +1,11 @@
 ---
 layout: base.njk
-title: Writing
+title: Notes
 permalink: /blog/
 ---
-<p class="section-label">Writing</p>
-<h1 class="page-title">Essays, notes, and things I’m learning.</h1>
-<p class="writing-intro">Writing about what I'm reading, building, and trying to understand. Some pieces draw on my work; others follow an interest or a question.</p>
+<p class="section-label">Notes</p>
+<h1 class="page-title">Notes on what I'm learning.</h1>
+<p class="writing-intro">What I'm reading, building, and trying to work through. Some of it draws on my work; some of it follows an interest or a question.</p>
 
 {% set tags = collections.tagList %}
 {% if tags.length %}
@@ -18,21 +18,23 @@ permalink: /blog/
 
 <div class="note-list">
   {% for post in collections.posts %}
-  <a class="note-item" href="{{ post.url }}">
-    <div class="note-item-top">
-      <span class="note-title">{{ post.data.title }}</span>
-      <span class="note-date">{{ post.data.date | readableDate }}</span>
-    </div>
-    <p class="note-excerpt">{{ post.data.excerpt }}</p>
+  <div class="note-item">
+    <a class="note-item-link" href="{{ post.url }}">
+      <div class="note-item-top">
+        <span class="note-title">{{ post.data.title }}</span>
+        <span class="note-date">{{ post.data.date | readableDate }}</span>
+      </div>
+      <p class="note-excerpt">{{ post.data.excerpt }}</p>
+    </a>
     {% if post.data.tags %}
     <div class="note-tags">
-      {% for tag in post.data.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+      {% for tag in post.data.tags %}<a class="tag" href="/topics/{{ tag | slugify }}/">{{ tag }}</a>{% endfor %}
     </div>
     {% endif %}
-  </a>
+  </div>
   {% else %}
   <p style="color:var(--ink-soft);">
-    Nothing published yet. Check back for essays and notes on reading, projects, and things I'm learning.
+    Nothing published yet. Check back for notes on reading, projects, and things I'm learning.
   </p>
   {% endfor %}
 </div>

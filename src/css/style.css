@@ -46,15 +46,17 @@ p{margin:0 0 22px}
 .featured-writing,.author-strip{display:grid;grid-template-columns:180px 1fr;gap:36px;border-top:1px solid var(--navy-border);padding:36px 0}
 .featured-writing .section-label{padding-top:12px}
 .note-list{margin-bottom:40px}
-.note-item{display:block;position:relative;padding:30px 38px 32px 0;border-top:1px solid var(--navy-border);color:var(--ink)}
-.note-item:hover{text-decoration:none}
-.note-item:hover .note-title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;color:var(--copper-deep)}
+.note-item{position:relative;padding:30px 38px 32px 0;border-top:1px solid var(--navy-border);color:var(--ink)}
+.note-item-link{display:block;color:inherit}
+.note-item-link:hover{text-decoration:none}
+.note-item-link:hover .note-title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;color:var(--copper-deep)}
 .note-item-top{display:flex;justify-content:space-between;align-items:baseline;gap:24px}
 .note-title{font:500 34px/1.2 var(--font-display);letter-spacing:-.025em;color:var(--ink);margin:0 0 16px}
 .note-date{display:block;font:12px/1.8 var(--font-mono);color:var(--ink-mute);white-space:nowrap}
 .note-excerpt{font-size:18px;color:var(--ink-soft);margin:0 0 18px}
 .note-tags{display:flex;gap:14px;flex-wrap:wrap;margin-top:16px}
 .tag{font-size:12px;color:var(--ink-mute)}
+.tag:hover{color:var(--copper-deep);text-decoration:underline}
 .tag+.tag:before{content:'/';margin-right:14px;color:#8793a5}
 .topic-chip-row{display:flex;flex-wrap:wrap;gap:10px 16px;margin:0 0 40px}
 .topic-chip{font:12px var(--font-mono);letter-spacing:.4px;color:var(--ink-mute);padding:6px 14px;border:1px solid var(--navy-border);border-radius:999px}
