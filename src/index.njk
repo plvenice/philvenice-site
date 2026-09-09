@@ -2,50 +2,38 @@
 layout: base.njk
 title: null
 ---
-<section class="hero">
-  <span class="hero-eyebrow">Phil Venice · Supply chain risk &amp; decisions</span>
-  <h1>What should we change<br>to reduce the risk?</h1>
-  <p class="lede">I write about using supply chain risk data to decide what to do next.
-    My focus is on choices that can leave a business dependent on one source,
-    and what it would take to change course.</p>
-  <div class="hero-actions">
-    <a class="btn btn-primary" href="/blog/how-long-to-undo/">Read the first essay</a>
-    <a class="btn btn-ghost" href="/about/">About Phil</a>
+<section class="hero editorial-hero">
+  <div>
+    <p class="hero-eyebrow">Supply chain risk &amp; decisions</p>
+    <h1>What should we <em>change</em> to reduce the risk?</h1>
+    <p class="lede">I write about supply dependencies, the choices that create them, and what it takes to change course.</p>
+    <a class="editorial-link" href="/blog/how-long-to-undo/">Read the essay <span aria-hidden="true">↗</span></a>
   </div>
+  <figure class="hero-figure">
+    <figcaption>The time it takes to recover</figcaption>
+    <div class="mini-timeline" role="img" aria-label="Hypothetical example: stock covers 3 months; replacement is ready in month 12, leaving 9 months without coverage.">
+      <div class="mini-row"><span>Stock coverage</span><div class="mini-track"><span class="mini-bar mini-stock"><b>3 months</b></span></div></div>
+      <div class="mini-row"><span>Replacement ready</span><div class="mini-track"><span class="mini-bar mini-ready"><b>12 months</b></span></div></div>
+      <div class="mini-row"><span>Uncovered interval</span><div class="mini-track"><span class="mini-bar mini-gap"><b>9 months</b></span></div></div>
+    </div>
+    <p>Hypothetical example · 3 months of stock / 12 months to replacement</p>
+    <a href="/blog/how-long-to-undo/#recovery-title">Explore the timing <span aria-hidden="true">↗</span></a>
+  </figure>
 </section>
-
-<section class="prose introduction">
-  <p class="section-label">The question behind the work</p>
-  <h2>How long would it take to undo this decision?</h2>
-  <p>A drawing can narrow the supply base years before a buyer places an order.
-    By the time supply stops, qualifying a replacement may take longer than the business can wait.</p>
-  <p>I want that recovery time considered while the design is still open to change.</p>
-  <p><a href="/blog/how-long-to-undo/#recovery-title">Explore the dependency and recovery timeline &rarr;</a></p>
-</section>
-
-<section>
-  <p class="section-label">Writing</p>
+<section class="featured-writing" aria-label="Latest writing">
+  <p class="section-label">Latest essay</p>
   <div class="note-list">
-    {% for post in collections.posts %}
+  {% for post in collections.posts %}
     <a class="note-item" href="{{ post.url }}">
-      <div class="note-item-top">
-        <span class="note-title">{{ post.data.title }}</span>
-        <span class="note-date">{{ post.data.date | readableDate }}</span>
-      </div>
+      <h2 class="note-title">{{ post.data.title }}</h2>
       <p class="note-excerpt">{{ post.data.excerpt }}</p>
-      {% if post.data.tags %}
-      <div class="note-tags">
-        {% for tag in post.data.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
-      </div>
-      {% endif %}
+      <span class="note-date">{{ post.data.date | readableDate }}</span>
+      <span class="read-arrow" aria-hidden="true">↗</span>
     </a>
-    {% else %}
-    <a class="note-item" href="/blog/">
-      <div class="note-item-top">
-        <span class="note-title">First essay coming soon</span>
-      </div>
-      <p class="note-excerpt">I'm setting this up before I start writing. Check back soon, or see the blog page for what's planned.</p>
-    </a>
-    {% endfor %}
+  {% endfor %}
   </div>
+</section>
+<section class="author-strip" aria-label="About Phil">
+  <h2>Phil Venice</h2>
+  <div><p>My background is in supply chain risk, third-party risk, and enterprise program leadership. After 11 years at Boeing, I now work in product management at LMI.</p><a href="/about/">More about me <span aria-hidden="true">↗</span></a></div>
 </section>

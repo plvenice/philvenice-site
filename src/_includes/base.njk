@@ -6,23 +6,22 @@
   <title>{% if title %}{{ title }} · Phil Venice{% else %}Phil Venice{% endif %}</title>
   <meta name="description" content="{{ description or 'Phil Venice on turning supply chain risk information into decisions, preserving alternatives, and designing for recovery.' }}">
   <link rel="stylesheet" href="/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="grain"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <nav class="nav">
       <a href="/" class="nav-brand">Phil Venice</a>
       <div class="nav-links">
-        <a href="/" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
-        <a href="/about/" {% if page.url == '/about/' %}class="active"{% endif %}>About</a>
-        <a href="/blog/" {% if page.url and '/blog/' in page.url %}class="active"{% endif %}>Writing</a>
-        <a href="/contact/" {% if page.url == '/contact/' %}class="active"{% endif %}>Contact</a>
+        <a href="/blog/" {% if page.url and '/blog/' in page.url %}class="active" aria-current="page"{% endif %}>Writing</a>
+        <a href="/about/" {% if page.url == '/about/' %}class="active" aria-current="page"{% endif %}>About</a>
+        <a href="/contact/" {% if page.url == '/contact/' %}class="active" aria-current="page"{% endif %}>Contact</a>
       </div>
     </nav>
   </header>
 
-  <main class="content">
+  <main class="content" id="main" tabindex="-1">
     {{ content | safe }}
   </main>
 
