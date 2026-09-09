@@ -3,7 +3,7 @@
  --paper:#fff; --paper-dim:#f3f5f7; --ink:#111827; --ink-soft:#4b5563; --ink-mute:#596579;
  --navy-950:#111827; --navy-900:#111827; --navy-700:#29364a; --navy-border:#d9dee7;
  --copper:#2457e8; --copper-deep:#1946c5; --copper-bright:#2457e8; --copper-tint:#eaf0ff;
- --font-body:'Inter',system-ui,sans-serif; --font-display:'Fraunces',Georgia,serif; --font-mono:'JetBrains Mono',monospace;
+ --font-body:'Inter',system-ui,sans-serif; --font-display:'Source Serif 4',Georgia,serif; --font-mono:'JetBrains Mono',monospace;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:32px}
