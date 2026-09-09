@@ -1,0 +1,42 @@
+<figure class="recovery-figure" aria-labelledby="recovery-title">
+  <figcaption>
+    <span class="figure-label">Explore the example</span>
+    <h2 id="recovery-title">From the drawing to a production gap</h2>
+    <p>Select a link in the chain to see what it constrains.</p>
+  </figcaption>
+  <ol class="dependency-chain" aria-label="How the design choice affects production">
+    <li><button type="button" data-chain="drawing" aria-pressed="true" aria-controls="chain-detail">1. Drawing<span>One material specified</span></button></li>
+    <li><button type="button" data-chain="source" aria-pressed="false" aria-controls="chain-detail">2. Supply<span>One qualified producer</span></button></li>
+    <li><button type="button" data-chain="replacement" aria-pressed="false" aria-controls="chain-detail">3. Replacement<span>Testing before use</span></button></li>
+    <li><button type="button" data-chain="production" aria-pressed="false" aria-controls="chain-detail">4. Production<span>Stock buys time</span></button></li>
+  </ol>
+  <p id="chain-detail" class="chain-detail" aria-live="polite">The drawing calls out one producer's material. An alternative needs evidence that it meets the requirements and acceptance for use.</p>
+  <div class="recovery-controls" hidden>
+    <label for="recovery-scenario">Compare a decision</label>
+    <select id="recovery-scenario">
+      <option value="custom" disabled>Custom timing assumptions</option>
+      <option value="baseline" selected>Starting point: qualify after disruption</option>
+      <option value="stock">Hold more stock</option>
+      <option value="qualified">Qualify an alternative beforehand</option>
+    </select>
+    <p id="scenario-detail">Qualification starts after supply stops. Replacement supply takes 12 months; stock covers 3.</p>
+    <div class="recovery-inputs">
+      <label for="stock-months">Stock coverage: <output id="stock-value" for="stock-months">3 months</output><input id="stock-months" type="range" min="0" max="24" value="3" step="1"></label>
+      <label for="recovery-months">Replacement supply ready: <output id="recovery-value" for="recovery-months">12 months</output><input id="recovery-months" type="range" min="0" max="24" value="12" step="1"></label>
+    </div>
+    <button class="figure-reset" type="button" id="recovery-reset">Reset example</button>
+  </div>
+  <div class="recovery-chart" role="img" aria-label="Starting example: stock covers months 0 to 3. Replacement supply is ready in month 12, leaving a 9-month gap.">
+    <div class="timeline-axis"><span>Supply stops · month 0</span><span>Month 24</span></div>
+    <div class="timeline-label" id="stock-bar-label">Stock covers 3 months</div>
+    <div class="timeline-track"><div id="stock-bar" class="timeline-bar stock-bar" style="width:12.5%"></div></div>
+    <div class="timeline-label" id="ready-bar-label">Replacement supply ready in month 12</div>
+    <div class="timeline-track"><div id="ready-bar" class="timeline-bar ready-bar" style="width:50%"></div></div>
+    <div class="timeline-label" id="gap-bar-label">Uncovered interval: months 3 to 12</div>
+    <div class="timeline-track"><div id="gap-bar" class="timeline-bar gap-bar" style="margin-left:12.5%;width:37.5%"></div></div>
+  </div>
+  <p class="recovery-result" id="recovery-result" role="status">9 months without supply coverage.</p>
+  <p class="figure-assumptions">Assumes supply stops completely at month 0, demand stays constant, stock is usable, and replacement supply covers demand once ready. Gap = replacement lead time minus stock coverage, with a minimum of zero. This is a timing illustration, not a prediction of downtime or failure probability.</p>
+  <noscript><p>The chart shows the starting example. Enable JavaScript to change the assumptions. Qualifying an alternative beforehand is illustrated as 2 months to supply readiness: 3 months of stock would cover that interval.</p></noscript>
+</figure>
+<script src="/js/recovery.js" defer></script>
