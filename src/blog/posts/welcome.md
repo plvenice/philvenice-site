@@ -1,4 +1,6 @@
 ---
+eleventyExcludeFromCollections: true
+permalink: false
 layout: post.njk
 title: "Welcome — this site is under construction"
 date: 2026-09-07

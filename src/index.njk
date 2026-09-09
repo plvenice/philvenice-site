@@ -3,21 +3,29 @@ layout: base.njk
 title: null
 ---
 <section class="hero">
-  <span class="hero-eyebrow">Product · Supply Chain Risk · Learning in public</span>
-  <h1>Phil Venice</h1>
-  <p class="lede">
-    Product manager working at the intersection of supply chain risk management and
-    Pentagon-facing programs. Formerly 11 years at Boeing in third-party risk &amp; resilience.
-    This is a small home for what I'm building, learning, and thinking about.
-  </p>
+  <span class="hero-eyebrow">Phil Venice · Supply chain risk &amp; decisions</span>
+  <h1>What should we change<br>to reduce the risk?</h1>
+  <p class="lede">Supply chain data should help us make a decision. I write about how to turn
+    what we know into choices that protect production, preserve alternatives, and account
+    for the time it takes to recover.</p>
   <div class="hero-actions">
-    <a class="btn btn-primary" href="/about/">About &amp; background</a>
-    <a class="btn btn-ghost" href="/blog/">Read the notes</a>
+    <a class="btn btn-primary" href="/blog/how-long-to-undo/">Read the first essay</a>
+    <a class="btn btn-ghost" href="/about/">About Phil</a>
   </div>
 </section>
 
+<section class="prose introduction">
+  <p class="section-label">The question behind the work</p>
+  <h2>How long would it take to undo this decision?</h2>
+  <p>A material specification, qualification requirement, or sourcing choice can commit
+    a business to a dependency for years. I’m interested in how engineering, procurement,
+    and operations can recognize those commitments while they still have choices.</p>
+  <p>This is a place to develop that reasoning: what can change, who can change it,
+    and whether the expected reduction in risk justifies the cost.</p>
+</section>
+
 <section>
-  <p class="section-label">Recent notes</p>
+  <p class="section-label">Writing</p>
   <div class="note-list">
     {% for post in collections.posts %}
     <a class="note-item" href="{{ post.url }}">

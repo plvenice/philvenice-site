@@ -12,7 +12,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     if (!dateObj) return "";
     const d = new Date(dateObj);
-    return d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+    return d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
   });
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
