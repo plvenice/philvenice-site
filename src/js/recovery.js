@@ -20,11 +20,23 @@ if (typeof document !== "undefined") {
       drawing: "The drawing calls out one producer's material. An alternative needs evidence that it meets the requirements and acceptance for use.",
       source: "In this example, one producer supplies the specified material. Buying through two distributors would still depend on that producer.",
       replacement: "Replacement lead time includes any remaining engineering work, testing, acceptance, and ramp-up until supply can cover demand. Prior qualification can remove some of that work.",
-      production: "Usable stock keeps production supplied while replacement work proceeds. When stock runs out first, the remaining interval has no supply coverage in this example."
+      stock: "The warehouse holds usable material for the current design. More inventory buys time, subject to shelf life, storage space, and cost.",
+      production: "The finished pump needs an accepted seal material. In this example, a supply gap remains if stock runs out before replacement supply can cover demand."
     };
     function render() {
       const s = Number(stock.value), r = Number(ready.value);
       const { gap, spare } = recoveryGap(s, r);
+      get("scene-stock-label").textContent = `${months(s)} of coverage`;
+      get("scene-production-label").textContent = gap ? `${gap}-month supply gap` : "Supply interval covered";
+      get("scene-extra-stock").setAttribute("opacity", s > 3 ? "1" : "0");
+      figure.querySelector(".supply-scene").dataset.covered = String(gap === 0);
+      get("scene-response-text").textContent = scenario.value === "qualified"
+        ? "Alternative qualified beforehand: an independent producer can supply accepted material after the assumed 2-month lead time."
+        : scenario.value === "stock"
+        ? "More stock in the warehouse buys time. Replacement material still needs the same qualification work."
+        : scenario.value === "custom"
+        ? `Your assumptions: stock covers ${months(s)}; replacement material can enter the chain in month ${r}.`
+        : "A replacement must pass testing before its material can enter this chain.";
       get("stock-value").textContent = months(s);
       get("recovery-value").textContent = months(r);
       stock.setAttribute("aria-valuetext", months(s));
