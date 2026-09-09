@@ -7,9 +7,15 @@ excerpt: "A design choice can create a supply dependency that takes years to rev
 description: "An argument for considering supply dependencies and recovery time during design reviews, with a hypothetical example."
 tags: ["design decisions", "supply chain risk"]
 ---
-A drawing can leave a buyer with only one acceptable source. Before approving it, I want to know how long it would take to use something else.
+During my 11 years at Boeing, I worked on supply chain risk and later led third-party risk and resilience work. Some of the most useful lessons came from helping resolve supply problems that threatened production.
 
-That answer belongs in the design review. Once production depends on the choice, changing it can become a much harder proposition.
+That work taught me to look beyond the supplier. A drawing could specify a particular material, and using something else could require testing and approval. Finding another source was only useful if we could use its product in time.
+
+The immediate job was to help keep production supplied. But the experience left me with a question: what could we have decided earlier that would have given us more options? I moved on to other responsibilities before I could fully pursue it.
+
+Writing here is a way to return to that question. I want to help teams consider the supply consequences of a design decision while they still have time to change it.
+
+A drawing can leave a buyer with only one acceptable source. Before approving it, I want to know how long it would take to use something else. That answer belongs in the design review.
 
 ## A dependency begins before the purchase order
 
